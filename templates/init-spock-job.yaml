@@ -37,6 +37,10 @@ spec:
           - name: admin-client-cert
             mountPath: /certificates/admin
             readOnly: true
+        {{- with .Values.pgEdge.initSpockJobConfig.resources }}
+        resources:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
         {{- with .Values.pgEdge.initSpockJobConfig.containerSecurityContext }}
         securityContext:
           {{- toYaml . | nindent 10 }}

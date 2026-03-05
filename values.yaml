@@ -18,6 +18,9 @@ pgEdge:
   # Override this for local development or to use a custom image.
   initSpockImageName: ""
   initSpockJobConfig:
+    # -- Resources to allocate for the init-spock job. No resources are allocated by default.
+    # Learn more at https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    resources: {}
     # -- Pod Security context for the init-spock job. Set to a Restricted profile by default.
     # Learn more at https://kubernetes.io/docs/concepts/security/pod-security-standards/
     podSecurityContext:
